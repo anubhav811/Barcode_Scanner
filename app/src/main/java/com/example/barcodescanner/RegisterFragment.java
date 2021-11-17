@@ -33,18 +33,16 @@ public class RegisterFragment extends Fragment{
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
             ViewGroup root = (ViewGroup) inflater.inflate(R.layout.register_fragment,container,false);
+
             fAuth = FirebaseAuth.getInstance();
             fStore = FirebaseFirestore.getInstance();
+
+
             mEmail      = root.findViewById(R.id.et_email);
             mPassword   = root.findViewById(R.id.et_password);
-
             btn_register= root.findViewById(R.id.btn_register);
-            if(fAuth.getCurrentUser() != null){
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                startActivity(intent);
-            }
+
             btn_register.setOnClickListener(v -> {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();

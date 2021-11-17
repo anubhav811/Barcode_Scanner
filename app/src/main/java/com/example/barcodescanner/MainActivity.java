@@ -30,11 +30,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirestoreRegistrar;
@@ -42,6 +49,9 @@ import com.google.firebase.firestore.Query;
 import com.google.zxing.client.android.Intents;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Button btn;
@@ -63,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
         intentIntegrator.setPrompt("Scanning Now...");
         intentIntegrator.initiateScan();
     }
+
+
+
     private FirestoreRecyclerAdapter adapter;
     private RecyclerView scanList;
     @Override
@@ -71,9 +84,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
-        String userID=fAuth.getUid();
+        String userID=fAuth.getCurrentUser().getUid();
+        Log.d("userid",userID);
 
 
 
@@ -93,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
         scanList=findViewById(R.id.recView);
 
 
-        Query query = fStore.collection(String.valueOf(userID));
-
+        Query query = fStore.collection(userID);
+        Log.d("queryfstore",query.toString());
         FirestoreRecyclerOptions<ScansModel> options = new FirestoreRecyclerOptions.Builder<ScansModel>()
                 .setQuery(query,ScansModel.class)
                 .build();
@@ -111,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull ScansViewHolder holder, int position, @NonNull ScansModel model) {
                             if(model.getScan_res()!=null && model.getScan_time()!=null){
                                 yourScans.setVisibility(View.VISIBLE);
-                                holder.desc_tv.setText("Scan Result :" + model.getScan_res());
-                                holder.time_tv.setText("Scanned on :" + model.getScan_time());
+                                holder.desc_tv.setText(model.getScan_res());
+                                holder.time_tv.setText("Scanned on: " +model.getScan_time());
                             }
 
             }
@@ -212,7 +228,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         OptionDialog.dismiss();
-
                     }
                 });
                 builder.show();
