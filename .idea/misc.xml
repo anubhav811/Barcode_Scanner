@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/drawable/layout_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/activity_launch.xml" value="0.2" />
         <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/list_item_single.xml" value="0.264" />
-        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/login_fragment.xml" value="0.20199275362318841" />
+        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/list_item_single.xml" value="0.6" />
+        <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/login_fragment.xml" value="0.16" />
         <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/layout/register_fragment.xml" value="0.264" />
         <entry key="..\:/Users/Anubhav Chachra/AndroidStudioProjects/BarcodeScanner2/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>

@@ -5,9 +5,8 @@ public class ScansModel {
     private String scan_res;
     private String scan_time;
 
-    private ScansModel(){
+    private ScansModel(){}
 
-    }
     private ScansModel(String scan_res,String scan_time){
         scan_res=this.scan_res;
         scan_time=this.scan_time;

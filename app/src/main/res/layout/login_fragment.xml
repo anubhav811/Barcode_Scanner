@@ -17,8 +17,9 @@
         android:hint="Your email address"
         android:inputType="textEmailAddress"
         android:paddingLeft="13dp"
-        android:textColor="#9A9393"
-        android:textColorHint="#9A9393"
+        android:textColor="#171717"
+        android:textColorHint="#F2000000"
+        android:textColorLink="#1E0707"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -34,8 +35,8 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:textColor="#9A9393"
-        android:textColorHint="#9A9393"
+        android:textColor="#171717"
+        android:textColorHint="#F2000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/et_email"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,11 +48,14 @@
         android:layout_width="114dp"
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-
+        android:layout_marginTop="40sp"
         android:text="Log In"
+        android:backgroundTint="#1E295A"
+        android:textColor="#B5A9A9"
+        app:cornerRadius="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
-
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
